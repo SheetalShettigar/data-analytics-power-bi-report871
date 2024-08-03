@@ -3,20 +3,20 @@ The report will present a high-level business summary tailored for C-suite execu
 
 ### Table of Contents
 * Project Description
-* Data Loading and Preparation
-* Import and Transform Data
+* Data Set
+* Import and Transform Data Set
 
 ### Project Description
 The aim is to transform the data into actionable insights for better decision-making using Microsoft Power BI to design a comprehensive Quarterly report. 
 This will involve extracting and transforming data from various origins, designing a robust data model rooted in a star-based schema, and then constructing a multi-page report.
 
-### Data Loading and Preparation
+### Data Set
 Dataset consists of 4 tables: 
 Fact Table : Orders
 Dimension Tables : Products, Customers and Stores
 Additional Tables to create Data MOdel : Date
 
-### Import and Transform Data
+### Import and Transform Data Set
 
 #### Orders Table:  
 The Orders table is your main fact table. It contains information about each order, including the order and shipping dates, the customer, store and product IDs for associating with dimension tables, and the amount of each product ordered. Each order in this table consists of an order of a single product type, so there is only one product code per order.
