@@ -56,52 +56,52 @@ The Customers table contains data each of the regions in which the company opera
   1. Calendar function is used to create a date table running from the start of the year containing the earliest date in the Orders['Order Date'] column to the end of             the year containing the latest date in the Orders['Shipping Date'] column.
      #### DAX formula used : Date = CALENDAR(min(Orders[Order Date]), max(Orders[Shipping Date]))
   2. Following columns added to date table which were created using the corresponding DAX formula:
-     ## Day of Week = WEEKDAY('Date'[Date],2)
-     ## Month Number = MONTH('Date'[Date])
-     ## Month Name = FORMAT('Date'[Date],"MMM")
-     ## Quarter = QUARTER('Date'[Date])
-     ## Year = YEAR('Date'[Date]) 
-     ## Start of Year = STARTOFYEAR('Date'[Date])
-     ## Start of Quarter = STARTOFQUARTER('Date'[Date])
-     ## Start of Month = STARTOFMONTH('Date'[Date])
-     ## Start of Week = 'Date'[Date] - WEEKDAY('Date'[Date],2) + 1
+     ##### Day of Week = WEEKDAY('Date'[Date],2)
+     ##### Month Number = MONTH('Date'[Date])
+     ##### Month Name = FORMAT('Date'[Date],"MMM")
+     ##### Quarter = QUARTER('Date'[Date])
+     ##### Year = YEAR('Date'[Date]) 
+     ##### Start of Year = STARTOFYEAR('Date'[Date])
+     ##### Start of Quarter = STARTOFQUARTER('Date'[Date])
+     ##### Start of Month = STARTOFMONTH('Date'[Date])
+     ##### Start of Week = 'Date'[Date] - WEEKDAY('Date'[Date],2) + 1
 
   * ### Build Star Schema Data Model
     1. To form a star schema following relationships between the tables were created. all relationships are one-to-many, with a single filter direction flowing from the 
        dimension table side to the fact table side.
-        ## Products[product_code] to Orders[product_code]
-        ## Stores[store code] to Orders[Store Code]
-        ## Customers[User UUID] to Orders[User ID]
-        ## Date[date] to Orders[Order Date]
-        ## Date[date] to Orders[Shipping Date]
+        ##### Products[product_code] to Orders[product_code]
+        ##### Stores[store code] to Orders[Store Code]
+        ##### Customers[User UUID] to Orders[User ID]
+        ##### Date[date] to Orders[Order Date]
+        ##### Date[date] to Orders[Shipping Date]
 
     * ### Measures Table with Key Measures
       1. From the Model view, select Enter Data from the Home tab of the ribbon: Measures Table was created
       2. Following Key measures were created:
          1. Total Orders that counts the number of orders in the Orders table :
-            ## DAX Formula : Total Orders = COUNTROWS(Orders)
+            ##### DAX Formula : Total Orders = COUNTROWS(Orders)
          2. Total Revenue that multiplies the Orders[Product Quantity] column by the Products[Sale_Price] column for each row, and then sums the result
-            ## Dax Formula : Total Revenue = SUMX(Orders,Orders[Product Quantity] * RELATED(Products[Sale Price]))
+            ##### Dax Formula : Total Revenue = SUMX(Orders,Orders[Product Quantity] * RELATED(Products[Sale Price]))
          3. Total Profit, For each row, subtract the Products[Cost_Price] from the Products[Sale_Price], and then multiply the result by the Orders[Product Quantity] then               Sums the result of all rows
-            ## Dax Formula : Total Profit = SUMX(Orders,Orders[Product Quantity] * (RELATED(Products[Sale Price]) - RELATED(Products[Cost Price])))
+            ##### Dax Formula : Total Profit = SUMX(Orders,Orders[Product Quantity] * (RELATED(Products[Sale Price]) - RELATED(Products[Cost Price])))
          4. Total Customers that counts the number of unique customers in the Orders table.
-            ## Dax Formula : Total Customers = DISTINCTCOUNT(Orders[User ID])
+            ##### Dax Formula : Total Customers = DISTINCTCOUNT(Orders[User ID])
          5. Total Quantity that counts the number of items sold in the Orders table
-            ## Dax Formula : Total Quantity = Sum(Orders[Product Quantity])
+            ##### Dax Formula : Total Quantity = Sum(Orders[Product Quantity])
          6. Profit YTD that calculates the total profit for the current year
-            ## Dax Formula : Profit YTD = TOTALYTD([Total Profit],Orders[Order Date])
+            ##### Dax Formula : Profit YTD = TOTALYTD([Total Profit],Orders[Order Date])
          7. Revenue YTD that calculates the total revenue for the current year
-            ## DAX Frmula : Revenue YTD = TOTALYTD([Total Revenue],Orders[Order Date])
+            ##### DAX Frmula : Revenue YTD = TOTALYTD([Total Revenue],Orders[Order Date])
 
       * ### Hierarchies - Date and Geography
-          * ## Date Hierarchy
+          * ##### Date Hierarchy
             1. Date hierarchy created using the following levels:Right click on the top most level of the hierarchy to create a date hirerachy then add the rest of levels
             Start of Year
             Start of Quarter
             Start of Month
             Start of Week
             Date
-        * ## Geography Hierarchy
+        * ##### Geography Hierarchy
           1. Create a new calculated column in the Stores table called Country that creates a full country name for each row, based on the Stores[Country Code] column,     
             according to the following scheme:
             GB : United Kingdom
