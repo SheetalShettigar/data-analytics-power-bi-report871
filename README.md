@@ -54,7 +54,7 @@ The Customers table contains data each of the regions in which the company opera
 * ##### Instructions:
   * ### Date Table : 
   1. Calendar function is used to create a date table running from the start of the year containing the earliest date in the Orders['Order Date'] column to the end of             the year containing the latest date in the Orders['Shipping Date'] column.
-     #### DAX formula used : Date = CALENDAR(min(Orders[Order Date]), max(Orders[Shipping Date]))
+     ##### DAX formula used : Date = CALENDAR(min(Orders[Order Date]), max(Orders[Shipping Date]))
   2. Following columns added to date table which were created using the corresponding DAX formula:
      ##### Day of Week = WEEKDAY('Date'[Date],2)
      ##### Month Number = MONTH('Date'[Date])
@@ -74,6 +74,8 @@ The Customers table contains data each of the regions in which the company opera
         ##### Customers[User UUID] to Orders[User ID]
         ##### Date[date] to Orders[Order Date]
         ##### Date[date] to Orders[Shipping Date]
+    ![image](https://github.com/user-attachments/assets/41276da6-37ee-435f-a682-2d3998973375)
+
 
     * ### Measures Table with Key Measures
       1. From the Model view, select Enter Data from the Home tab of the ribbon: Measures Table was created
