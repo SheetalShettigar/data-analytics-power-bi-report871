@@ -5,6 +5,7 @@ The report will present a high-level business summary tailored for C-suite execu
 * Project Description
 * Data Set
 * Import and Transform Data Set
+* Data Model
 
 ### Project Description
 The aim is to transform the data into actionable insights for better decision-making using Microsoft Power BI to design a comprehensive Quarterly report. 
@@ -47,4 +48,6 @@ The Customers table contains data each of the regions in which the company opera
   2. Navigate to your folder, and then select Combine and Transform to import the data. Power BI will automatically append the three files into one query.
   3. Once the data are loaded into Power BI, create a Full Name column by combining the [First Name] and [Last Name] columns
   4. Delete any obviously unused columns (eg. index columns) and rename the remaining columns to align with Power BI naming conventions
+
+ #### Data Model:
 
