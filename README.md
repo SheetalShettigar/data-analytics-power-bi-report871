@@ -19,7 +19,6 @@ Dimension Tables : Products, Customers and Stores
 Additional Tables to create Data MOdel : Date
 
 ### Import and Transform Data Set
-
 #### Orders Table:  
 The Orders table is your main fact table. It contains information about each order, including the order and shipping dates, the customer, store and product IDs for associating with dimension tables, and the amount of each product ordered. Each order in this table consists of an order of a single product type, so there is only one product code per order.
 * ##### Instructions: 
@@ -50,7 +49,7 @@ The Customers table contains data each of the regions in which the company opera
   3. Once the data are loaded into Power BI, create a Full Name column by combining the [First Name] and [Last Name] columns
   4. Delete any obviously unused columns (eg. index columns) and rename the remaining columns to align with Power BI naming conventions
 
- ### Data Model:
+### Data Model:
  In order to make use of Power BI's time intelligence functions, continuous date table is created, covering the entire time period of our data.
 * ##### Instructions:
   * ### Date Table : 
@@ -128,6 +127,9 @@ The Customers table contains data each of the regions in which the company opera
   * A donut chart showing number of customers by country and a bar chart showing number of customers by product category
   * Three card visuals showing name, number of orders and revenue for the top 3 customers sort by revenue.
   * A date slicer to filter the page by year.
+
+    ![image](https://github.com/user-attachments/assets/c81c0467-0c21-4fbe-9b89-3e2174d0afc5)
+
 
 #### Executive Summary Dashboard Page
   ##### To display executive summary high level page
