@@ -141,7 +141,7 @@ The Customers table contains data each of the regions in which the company opera
    * KPIs of Quarterly revenue, customers and profit
    * A table of top 10 products
 
-     ![image](https://github.com/user-attachments/assets/809f4954-a245-42be-8263-b263c933507a)
+  ![image](https://github.com/user-attachments/assets/809f4954-a245-42be-8263-b263c933507a)
 
   #### Product Detail Page
    This page contains the following visuals
@@ -161,7 +161,7 @@ The Customers table contains data each of the regions in which the company opera
    ![image](https://github.com/user-attachments/assets/e4b9917f-971c-430e-ac4c-70ac3cd0b611)
 
 ### Cross Filtering and Navigation   
-    Added the required cross filtering on the report pages and a navigation tool bar to navigate between the pages.
+  Added the required cross filtering on the report pages and a navigation tool bar to navigate between the pages.
 
 
    
