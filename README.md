@@ -6,6 +6,7 @@ The report will present a high-level business summary tailored for C-suite execu
 * Data Set
 * Import and Transform Data Set
 * Data Model
+* Set Up Reports
 
 ### Project Description
 The aim is to transform the data into actionable insights for better decision-making using Microsoft Power BI to design a comprehensive Quarterly report. 
@@ -76,7 +77,6 @@ The Customers table contains data each of the regions in which the company opera
         ##### Date[date] to Orders[Shipping Date]
     ![image](https://github.com/user-attachments/assets/41276da6-37ee-435f-a682-2d3998973375)
 
-
     * ### Measures Table with Key Measures
       1. From the Model view, select Enter Data from the Home tab of the ribbon: Measures Table was created
       2. Following Key measures were created:
@@ -118,6 +118,11 @@ The Customers table contains data each of the regions in which the company opera
             World Region
             Country
             Country Region
+### Set Up Reports
+  #### Customer Level Analysis Reports Page
+  
+  
+
 
 
 
