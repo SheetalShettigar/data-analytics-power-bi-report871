@@ -7,6 +7,7 @@ The report will present a high-level business summary tailored for C-suite execu
 * Import and Transform Data Set
 * Data Model
 * Set Up Reports
+* Cross Filtering and Navigation
 
 ### Project Description
 The aim is to transform the data into actionable insights for better decision-making using Microsoft Power BI to design a comprehensive Quarterly report. 
@@ -128,12 +129,48 @@ The Customers table contains data each of the regions in which the company opera
   * Three card visuals showing name, number of orders and revenue for the top 3 customers sort by revenue.
   * A date slicer to filter the page by year.
 
-    ![image](https://github.com/user-attachments/assets/c81c0467-0c21-4fbe-9b89-3e2174d0afc5)
+   ![image](https://github.com/user-attachments/assets/fd61c2a7-5903-4e68-8f25-63cd1746d3e4)
 
 
-#### Executive Summary Dashboard Page
-  ##### To display executive summary high level page
-  
+  #### Executive Summary Dashboard Page
+   This page contains the following visuals
+   * Card visuals showing Total Revenue, Total Profit, and Total Orders
+   * A graph of revenue against time
+   * Donut charts showing orders and revenue by country
+   * Bar chart of orders by category
+   * KPIs of Quarterly revenue, customers and profit
+   * A table of top 10 products
+
+     ![image](https://github.com/user-attachments/assets/809f4954-a245-42be-8263-b263c933507a)
+
+  #### Product Detail Page
+   This page contains the following visuals
+   * Card visuals to display the selected Country and Product Category
+   * Gauge visuals to display the selected category's revenue, profit and number of orders performance against quarterly targets
+   * An area chart showing relative revenue performance of each category over time
+   * Table showing the Top 10 products by revenue in the selected context
+   * A scatter graph of quantity ordered against profit per item for products in the current context.
+   * A slicer tool bar to help select product category and country
+
+    ![image](https://github.com/user-attachments/assets/aa3216f5-8e5b-40d4-8ca3-bb9778cc9440)
+
+   #### Stores Map Page
+   A report page to easily chaeck that are most profitable as well as which are on track to acheive quarterly profit and revenue targets. 
+   A country slicer to select the country region.
+
+   ![image](https://github.com/user-attachments/assets/e4b9917f-971c-430e-ac4c-70ac3cd0b611)
+
+### Cross Filtering and Navigation   
+    Added the required cross filtering on the report pages and a navigation tool bar to navigate between the pages.
+
+
+   
+
+
+     
+
+
+
   
   
 
