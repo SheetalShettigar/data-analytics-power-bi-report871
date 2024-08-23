@@ -104,22 +104,34 @@ The Customers table contains data each of the regions in which the company opera
             Start of Week
             Date
         * ##### Geography Hierarchy
-          1. Create a new calculated column in the Stores table called Country that creates a full country name for each row, based on the Stores[Country Code] column,     
+          1. A new calculated column in the Stores table called Country that creates a full country name for each row, based on the Stores[Country Code] column,     
             according to the following scheme:
             GB : United Kingdom
             US : United States
             DE : Germany
-          2. Create a new calculated column in the Stores table called Geography that creates a full geography name for each row, based on the Stores[Country Region], and               Stores[Country] columns, separated by a comma and a space.
+          2. A new calculated column in the Stores table called Geography that creates a full geography name for each row, based on the Stores[Country Region], and                      Stores[Country] columns, separated by a comma and a space.
           3. Assigned Data category, as follows:
             World Region : Continent
             Country : Country
             Country Region : State or Province
-          4. Create a Geography hierarchy using the following levels:
+          4. Finally Created a Geography hierarchy using the following levels:
             World Region
             Country
             Country Region
+
 ### Set Up Reports
   #### Customer Level Analysis Reports Page
+  This page contains the following visuals
+  * Two Card visuals headlining Total Distinct Customers and Revenue Per Customer.
+  * A Line chart for monthly distinct customers
+  * A table showing the Top 20 customers by total revenue, showing revenue per customer and total orders for each customer
+  * A donut chart showing number of customers by country and a bar chart showing number of customers by product category
+  * Three card visuals showing name, number of orders and revenue for the top 3 customers sort by revenue.
+  * A date slicer to filter the page by year.
+
+#### Executive Summary Dashboard Page
+  ##### To display executive summary high level page
+  
   
   
 
