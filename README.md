@@ -8,6 +8,7 @@ The report will present a high-level business summary tailored for C-suite execu
 * Data Model
 * Set Up Reports
 * Cross Filtering and Navigation
+* Create Metrics for Users Outside the Company using SQL
 
 ### Project Description
 The aim is to transform the data into actionable insights for better decision-making using Microsoft Power BI to design a comprehensive Quarterly report. 
@@ -165,8 +166,13 @@ The Customers table contains data each of the regions in which the company opera
 
 ### Create Metrics for Users Outside the Company using SQL
 1. How many staff are there in all of the UK stores?
-    Select count("staff numbers") from dim_stores where country_code = 'GB'
+   
+    Select count("staff numbers") as "staff_count" from dim_stores where country_code = 'GB'
+   ![image](https://github.com/user-attachments/assets/07048f31-1307-4827-9e4f-6e7b099fafbc)
+
+   
 3. Which month in 2022 has had the highest revenue?
+   
     Select highest_revenue_month, round(sum(total_revenue)) as "total_revenue" FROM
     (Select SUBSTRING(orders_powerbi."Order Date",6,2) as "highest_revenue_month",
     sum((orders_powerbi."Product Quantity" * dim_products.sale_price)) as "total_revenue"
@@ -177,7 +183,12 @@ The Customers table contains data each of the regions in which the company opera
     group by orders_powerbi."Order Date",orders_powerbi.product_code)
     group by highest_revenue_month
     order by total_revenue desc limit 1
+
+![image](https://github.com/user-attachments/assets/016bc61c-bfaa-45fa-8638-d4fd1ad6ddf7)
+
+   
 5. Which German store type had the highest revenue for 2022?
+   
    Select dim_stores.store_type as "highest_revenue_store_type",
     sum((orders_powerbi."Product Quantity" * dim_products.sale_price)) as "total_revenue"
     from orders_powerbi, dim_products, dim_stores
@@ -189,8 +200,12 @@ The Customers table contains data each of the regions in which the company opera
     group by dim_stores.store_type
     order by total_revenue desc limit 1
 
+   ![image](https://github.com/user-attachments/assets/70868497-6ef6-4f25-9298-bac4372b2af4)
+
+
 7. Create a view where the rows are the store types and the columns are the total sales, percentage of total sales and the count of orders
-   create View new_question4 as
+   
+create View new_question4 as
 (Select dim_stores.store_type,
 count((orders_powerbi."Order Date")) as "order_count",
 sum((orders_powerbi."Product Quantity" * dim_products.sale_price)) as "total_sales",
@@ -200,7 +215,11 @@ where orders_powerbi.product_code = dim_products.product_code
 and orders_powerbi."Store Code" = dim_stores."store code"
 group by dim_stores.store_type)
 
+![image](https://github.com/user-attachments/assets/83e37afe-e98d-4dc5-867e-eb217db381d5)
+
+
 9. Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
+
 Select dim_products.category as "highest_profit_product_category",
 sum((dim_products.sale_price - dim_products.cost_price )) as "profit"
 from orders_powerbi, dim_products, dim_stores
@@ -212,6 +231,9 @@ and dim_stores.country_code = 'GB'
 and dim_stores.country_region = 'Wiltshire'
 group by dim_products.category
 order by profit desc limit 1
+
+![image](https://github.com/user-attachments/assets/76bc6659-0173-4ba9-b10b-824128516f7c)
+
 
    
 
